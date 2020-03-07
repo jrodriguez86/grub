@@ -11,12 +11,7 @@ const bcrypt = require('bcrypt');
 // Mongoose
 const mongoose = require('mongoose');
 
-// Link to users controller
-const usersController = require('./controllers/users.js');
-
-
-// Link to sessions controller
-const sessionsController = require('./controllers/sessions.js');
+const session = require('express-session');
 
 
 
@@ -25,7 +20,7 @@ const sessionsController = require('./controllers/sessions.js');
 // patch requests from web pages:
 const methodOverride = require("method-override");
 
-mongoose.connect('mongodb://localhost:27017/auth');
+mongoose.connect('mongodb://localhost:27017/');
 
 mongoose.connection.once('open', () => {
     console.log('connected to mongo');
@@ -38,57 +33,41 @@ app.use(express.urlencoded({ extended: false }));
 // Load methodOverride as middleware
 app.use(methodOverride("_method"));
 
-///// ROUTES /////
 
 
+app.use(session({
+    secret: "feedmeseymour", //some random string
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.get('/', (req, res)=>{
+    res.render('index.ejs', {
+        currentUser: req.session.currentUser
+    });
+});
+
+app.get('/app', (req, res)=>{
+    if(req.session.currentUser){
+        res.render("./app/index.ejs")
+    } else {
+        res.redirect('/sessions/new');
+    }
+});
+
+
+// Link to users controller
+const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
 
+// Link to sessions controller
+const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
-// // EDIT
-// app.get("/items/:id/edit", (req, res) => {
-//   res.render("edit.ejs", {
-//     item: items[req.params.id],
-//     index: req.params.id
-//   });
-// });
+// Link page once user is logged in
+const restaurantsController = require("./controllers/restaurants.js")
+app.use("/app", restaurantsController)
 
-// // UPDATE
-// app.put("/:id", (req, res) => {
-//   items[req.params.id] = req.body;
-//   res.redirect("/");
-// });
-
-// // SHOW
-// app.get("/:id", (req, res) => {
-//   res.render("show.ejs", { item:[req.params.id] });
-// });
-
-// // DESTROY
-// app.delete("/:id", (req, res) => {
-//   items.splice(req.params.id, 1); //remove the item from the array
-//   res.redirect("/"); //redirect to index page
-// });
-
-// // CREATE
-// app.post("/", (req, res) => {
-//   let index = items.push(req.body) - 1;
-//   res.redirect(`/items/${index}`);
-// });
-
-
-
-// // // Create User
-// // router.post('/', (req, res) => {
-// //     User.create(req.body, (err, createdUser)=>{
-// //         res.redirect('/');    
-// //     });
-// // });
-
-// // INDEX
-// app.get("/", (req, res) => {
-//   res.render("index.ejs")
-// });
 
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
