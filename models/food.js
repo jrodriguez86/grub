@@ -4,8 +4,9 @@ const User = require('../models/users.js')
 const Restaurants = require('../models/restaurants.js')
 
 const foodSchema = new Schema({
-    Restaurant: String,
-    Stars: String
+    location: String,
+    name: String,
+    
 });
 
 const Restaurant = mongoose.model('Restaurant', userSchema);
