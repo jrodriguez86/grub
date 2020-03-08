@@ -47,6 +47,8 @@ app.get('/', (req, res)=>{
     });
 });
 
+
+
 app.get('/app', (req, res)=>{
     if(req.session.currentUser){
         res.render("./app/index.ejs")
@@ -54,6 +56,7 @@ app.get('/app', (req, res)=>{
         res.redirect('/sessions/new');
     }
 });
+
 
 
 // Link to users controller

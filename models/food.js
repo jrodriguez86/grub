@@ -6,6 +6,7 @@ const Restaurants = require('../models/restaurants.js')
 const foodSchema = new Schema({
     location: String,
     name: String,
+    cost: String,
     
 });
 
