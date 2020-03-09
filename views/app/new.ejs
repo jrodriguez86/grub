@@ -15,15 +15,15 @@
     <form action="/app" method="POST">
         <div class="form-group">
                 <label for="location">Location</label>
-                <input type="text" class="form-control" id="location" placeholder="Boston, Miami, etc...">
+                <input type="text" class="form-control" name="location" placeholder="Boston, Miami, etc...">
               </div>
               <div class="form-group">
                     <label for="location">Restaurant Name</label>
-                    <input type="text" class="form-control" id="restaurant" placeholder="Where do you want to GRUB?">
+                    <input type="text" class="form-control" name="name" placeholder="Where do you want to GRUB?">
                   </div>
                   <div class="form-group">
                         <label for="exampleFormControlSelect1">What's the budget?</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" name="cost">
                           <option>$</option>
                           <option>$$</option>
                           <option>$$$</option>
@@ -31,7 +31,7 @@
                           
                         </select>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <input class="btn btn-primary" type="submit" value="Submit">
     </form>
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

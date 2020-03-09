@@ -10,37 +10,36 @@
   crossorigin="anonymous"></script>
       </head>
     <body>
-        <h1>
-            <% if(currentUser) { %>
-                Welcome <%=currentUser.username%>!
-            <% } else { %>
-                Welcome!
-            <% } %>
-        </h1>
+            <h1>
+                    <% if(currentUser) { %>
+                        Welcome <%=currentUser.username%>!
+                    <% } else { %>
+                        Welcome!
+                    <% } %>
+                </h1>
+                
+                <ul>
+                    <% if(currentUser) { %>
+                        <li>
+                            <form action="/sessions?_method=DELETE" method="POST">
+                                <input type="submit" value="Logout"/>
+                            </form>
+                        </li>
+                    <% } %>
+                </ul>
         
-        <ul>
-            <% if(currentUser) { %>
-                <li>
-                    <form action="/sessions?_method=DELETE" method="POST">
-                        <input type="submit" value="Logout"/>
-                    </form>
-                </li>
-            <% } %>
-        </ul>
-
-
-        <% if(currentUser) { %>
-            <main>
-                <h2>What are you in the mood for?</h2>
-                    <a href="/app/new">Let's GRUB!</a>
-            </main>
-        <% } %>
-
-        <!-- Log in - Register box  -->
-           <div class="container">
-                <a href="/sessions/new">Log In</a></li>
-                <a href="/users/new">Register</a></li>
-           </div>
+        
+                <% if(currentUser) { %>
+                    <main>
+                        <h2>What are you in the mood for?</h2>
+                            <a href="/app/new">Let's GRUB!</a>
+                    </main>
+                <% } %>
+                <!-- Log in - Register box  -->
+                   <div class="container">
+                        <a href="/sessions/new">Log In</a></li>
+                        <a href="/users/new">Register</a></li>
+                   </div>
             
 
 
