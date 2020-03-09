@@ -12,7 +12,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 
 const session = require('express-session');
-
+const Restaurant = require('./models/restaurants.js');
 
 
 
@@ -47,7 +47,12 @@ app.get('/', (req, res)=>{
     });
 });
 
-
+// INDEX
+app.get('/', (req, res) => {
+    Restaurant.find({}, (err, restaurants) => {
+      res.render("app/index.ejs", { restaurants });
+    })
+  })
 
 app.get('/app', (req, res)=>{
     if(req.session.currentUser){
