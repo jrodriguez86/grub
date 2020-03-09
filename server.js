@@ -20,7 +20,7 @@ const Restaurant = require('./models/restaurants.js');
 // patch requests from web pages:
 const methodOverride = require("method-override");
 
-mongoose.connect('mongodb://localhost:27017/');
+mongoose.connect('mongodb://localhost:27017/grub');
 
 mongoose.connection.once('open', () => {
     console.log('connected to mongo');
@@ -54,13 +54,15 @@ app.get('/', (req, res) => {
     })
   })
 
-app.get('/app', (req, res)=>{
-    if(req.session.currentUser){
-        res.render("./app/index.ejs")
+  app.get("/app", (req, res) => {
+    if (req.session.currentUser) {
+      Restaurant.find({}, (err, restaurants) => {
+        res.render("./app/index.ejs", { restaurants });
+      });
     } else {
-        res.redirect('/sessions/new');
+      res.redirect("/sessions/new");
     }
-});
+  });
 
 
 
