@@ -8,6 +8,15 @@
 </head>
 <body>
     <h1>City</h1>
+    <ul>
+        <% for(let i=0; i < restaurants.length; i++){ %>
+            <li>
+            location: <%restaurants[i].location %>
+            name: <%restaurants[i].name %>
+            cost: <%restaurants[i].cost %>
+            </li>
+            <% } %>
+    </ul>
     
 </body>
 </html>

@@ -9,9 +9,9 @@ router.get('/new', (req, res)=>{
 });
 
 // Create
-router.post('/new', (req, res) => {
+router.post('/', (req, res) => {
    Restaurant.create(req.body, (err, result) => {
-     res.send(result);
+     res.redirect("/app");
    })
 });
 

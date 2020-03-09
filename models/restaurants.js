@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User = require('./users.js')
-const Restaurants = require('./restaurants.js')
 
-const grubSchema = new Schema({
+
+const restaurantSchema = new Schema({
     location: String,
     name: String,
     cost: String,
     
 });
 
-const Restaurant = mongoose.model('Restaurant', grubSchema);
+const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 module.exports = Restaurant;
