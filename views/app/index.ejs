@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>grub</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+      <link rel="stylesheet" href="..public/main.css">
 </head>
 <body>
-    
-    <ul>
+        <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="/">grub</a>
+                      
+                
+                <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/app">Grub Spots</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/sessions/new">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="/users/new">Register</a>
+                        </li>
+                        
+                            <li>
+                                <form action="/sessions?_method=DELETE" method="POST">
+                                    <input class="btn btn-secondary" type="submit" value="Logout">
+                                </form>
+                            </li>
+                      
+                      </ul>
+              </nav>
+              <div class="card-deck">
+              <div class="card" style="width: 18rem;">
         <% for(let i=0; i < restaurants.length; i++){ %>
-            <li>
-            location: <%=restaurants[i].location %>
-            name: <%=restaurants[i].name %>
-            cost: <%=restaurants[i].cost %>
-            </li>
+            <div class="card-body">
+                    <h5 class="card-title"><%=restaurants[i].name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=restaurants[i].cost %></h6>
+                    <p class="card-text"><%=restaurants[i].location %></p>
+            </div>
+              </div>
+              </div>    
             <% } %>
     </ul>
     

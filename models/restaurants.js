@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const restaurantSchema = new Schema({
-    location: String,
+    
     name: String,
+    city: String,
+    state: String,
     cost: String,
     
 });
