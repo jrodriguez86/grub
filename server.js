@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 // Link public folder
-app.use(express.static("/public"));
+app.use(express.static('public'))
 
 
 

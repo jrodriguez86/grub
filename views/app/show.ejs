@@ -43,34 +43,23 @@
                       </ul>
                       
               </nav>
-
-            <div class="grub-spots">
-                <img src="../grub_spots.png">
-            </div>
-
+              <h1>Grub Spot</h1>
               
-                    <% for(let i=0; i < restaurants.length; i++){ %>
-                        <div class="list-group">
-                        <a href="/app/<%=restaurants[i].id; %>" class="list-group-item list-group-item-action flex-column align-items-start">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1"><%=restaurants[i].name %></h5>
-                        <small><%=restaurants[i].cost %></small>
-                      
-                      <p class="mb-1"><%=restaurants[i].city %> <%=restaurants[i].state %></p>
-                      <small><%=restaurants[i].attire %></small>
-                      <p><%=restaurants[i].description %></p>
+              <div class="card">
+            <div class="card-body">
+                    <h5 class="card-title"><%=restaurant.name %></h5>
+                    <p class="card-text"><%=restaurant.city %> <%=restaurant.state %></p>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=restaurant.cost %></h6>
+                    <p class="card-text"><%=restaurant.attire %></p>
                     
-                    
+                    <a href="/app" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back to grub spots</a>
 
-                    <form action="/app/<%=restaurants[i].id%>?_method=DELETE" method="POST">
-                        <input class="btn btn-secondary" type="submit" value="Delete">
-                    </form>
-                        </a>
+                    
             </div>
               </div>
-              </div>    
-            <% } %>
-    </ul>
+                 
+           
+    
     
 </body>
 </html>

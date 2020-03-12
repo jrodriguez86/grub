@@ -1,5 +1,55 @@
-.nav {
+body {
+    background-color: #eeeeee;
+    justify-content: center;
+}
+
+.navbar {
     padding: 20px;
     background-color: #222831;
-    display: inline-block;
+    
 }
+
+.navbar-brand {
+    color: #eeeeee;
+    font-family: 
+}
+
+
+.intro_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    padding: 30px;
+}
+
+.burger {
+    width: 400px;
+    height: 400px;
+}
+
+.jumbotron {
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.grub-spots {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.form-group {
+    padding: 30px;
+}
+
+
+

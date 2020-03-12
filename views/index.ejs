@@ -10,12 +10,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
-  <link rel="stylesheet" href=".public/main.css">
+    <link rel="stylesheet" href="../main.css">
       </head>
     <body>
             <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="/">grub</a>
-                    
+                    <a class="navbar-brand" href="/">
+                            <img src="../grub_logo.png" width="60" height="60" alt="">
+                          </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collpase navbar-collapse"></div>
                     <ul class="nav justify-content-end">
                             <li class="nav-item">
                               <a class="nav-link active" href="/">Home</a>
@@ -38,13 +43,20 @@
                             <% } %>
                           </ul>
                   </nav>
+                  
+                  <div class="intro_logo">
+                        <img class="burger" src="../welcome_grub.png">
+                        </div>  
+                      
                   <div class="jumbotron">
-                        <h1 class="display-4"><% if(currentUser) { %>
-                        Welcome <%=currentUser.username%>!
-                    <% } else { %>
-                        Welcome!
-                    <% } %>
-                </h1>
+                        
+                        <h1 class="display-4">   <% if(currentUser) { %>
+                            Hey <%=currentUser.username%>!
+                        <% } %>
+                    </h1>
+                                
+                                      
+                            
                 
         
         
@@ -56,6 +68,7 @@
 
                     
                 <% } %>
+                  </div>
                   </div>
                 <!-- Log in - Register box 
                    <div class="container">
