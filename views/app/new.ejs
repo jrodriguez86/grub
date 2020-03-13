@@ -39,21 +39,22 @@
               
               </ul>
       </nav>
+      
     <form action="/app" method="POST">
-        <div class="form-group">
+      
+      <div class="form-group">
                 <label for="location">grub spot</label>
-                <div class="col-sm-10">
                 <input type="text" class="form-control" id="name" name="name" placeholder="where do you want to eat?">
               </div>
-        </div>
+        
         <div class="form-row">
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-6">
                     <label for="city">city</label>
                     
                     <input type="text" class="form-control" id="city" name="city" placeholder="Boston, Miami, etc">
                   </div>
               
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                       <label for="state" class="col-sm-2 control-label">state</label>
                       
                         <select class="form-control" id="state" name="state">
@@ -115,7 +116,7 @@
                       </div>
                   <div class="form-group">
                         <label for="exampleFormControlSelect1">price</label>
-                        <div class="col-sm-4">
+                        <div class="col-md-6">
                         <select class="form-control" id="cost" name="cost">
                           <option>$</option>
                           <option>$$</option>
@@ -127,7 +128,7 @@
                       
                           <div class="form-group">
                               <label for="exampleFormControlSelect1">attire</label>
-                              <div class="col-sm-4">
+                              <div class="col-md-6">
                               <select class="form-control" id="attire" name="attire">
                                   <option value="">N/A</option>
                                   <option>formal</option>
@@ -141,7 +142,8 @@
                           <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
                         </div>
                   </div>
-                  <input class="btn btn-primary" type="submit" value="Submit">
+                  <input class="btn btn-secondary btn-lg active" type="submit" value="Submit">
+                  </div>
     </form>
     
 </body>

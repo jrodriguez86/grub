@@ -52,8 +52,12 @@
                         
                         <h1 class="display-4">   <% if(currentUser) { %>
                             Hey <%=currentUser.username%>!
-                        <% } %>
-                    </h1>
+                            <% } else { %>
+                                <a href="/sessions/new" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Log in</a>
+                                <a href="/users/new" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Register</a>
+
+                            <% } %>
+                        </h1>
                                 
                                       
                             
