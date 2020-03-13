@@ -34,11 +34,20 @@ router.delete("/:id", (req, res) => {
 // EDIT
 router.get("/:id/edit", (req, res) => {
   Restaurant.findById(req.params.id, (err, foundRestaurant) => {
-    res.render("edit.ejs", {
+    res.render("app/edit.ejs", {
       restaurant: foundRestaurant
     });
   });
 });
+
+// PUT
+router.put("/:id", (req, res) => {
+  Restaurant.findByIdAndUpdate(req.params.id, req.body,
+    { new: true },
+    (err, updateRestaurants) => {
+      res.redirect("/app");
+    })
+})
 
 // INDEX
 router.get('/', (req, res) => {
