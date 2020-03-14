@@ -2,7 +2,7 @@
 
 ## About
 
-### Grub is an app that allows you to save restaurants you want to try locally or when you travel
+Grub is an app that allows you to save restaurants you want to try locally or when you travel
 
 ## Technologies used
 
@@ -31,7 +31,7 @@
 
 ## Approach taken
 
-### I started by creating my github repo and building out my web server. Then all technologies were installed and when my server was up and running, I started working on authentication for the user. I wanted to make sure I had a private session with an encrypted password for any new user on the site. Once I created the user session, I started working on my routes for the user to start building out their restaurant list. When all the routes were created I started working on my styling using Bootstrap 4 incorporating UX design.
+I started by creating my github repo and building out my web server. Then all technologies were installed and when my server was up and running, I started working on authentication for the user. I wanted to make sure I had a private session with an encrypted password for any new user on the site. Once I created the user session, I started working on my routes for the user to start building out their restaurant list. When all the routes were created I started working on my styling using Bootstrap 4 incorporating UX design.
 
 ## Link
 
