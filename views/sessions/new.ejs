@@ -12,42 +12,44 @@
     <link rel="stylesheet" href="../main.css">
     </head>
     <body>
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-md">
                     <a class="navbar-brand" href="/">
                             <img src="../grub_logo.png" width="60" height="60" alt="">
                           </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collpase navbar-collapse"></div>
-                    <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                              <a class="nav-link active" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="/app">Grub Spots</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="/sessions/new">Log in</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link disabled" href="/users/new">Register</a>
-                            </li>
-                            
-                          </ul>
+                    <div class="collpase navbar-collapse" id="navBarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                      <a class="nav-link" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/app">Grub Spots</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/sessions/new">Log in</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link disabled" href="/users/new">Register</a>
+                                    </li>
+                                    
+                                  </ul>
+                    </div>
+                    
                   </nav>
-        <div class="sign-in-create-user">
+                  <div class="jumbotron">
         <h1>Sign In</h1>
         <form action="/sessions" method="POST">
             <div class="form-group">
-                    <label for="enter username">username</label>
+                    <label for="enter username">username:</label>
             <input type="text" name="username" placeholder="username"/>
             </div>
             <div class="form-group">
-                    <label for="password">password</label>
+                    <label for="password">password:</label>
             <input type="password" name="password" />
             </div>
-            <input type="submit" value="Log In" />
+            <button type="submit" class="btn btn-secondary btn-lg active">Log in</button>
         </form>
         </div>
     </body>

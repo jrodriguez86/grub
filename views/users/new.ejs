@@ -13,29 +13,33 @@
             <link rel="stylesheet" href="../main.css">
     </head>
     <body>
-            <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="/">
-                            <img src="../grub_logo.png" width="60" height="60" alt="">
-                          </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collpase navbar-collapse"></div>
-                    <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                              <a class="nav-link active" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="/app">Grub Spots</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="/sessions/new">Log in</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link disabled" href="/users/new">Register</a>
-                            </li>
-                          </ul>
-                  </nav>
+                <nav class="navbar navbar-expand-md">
+                                <a class="navbar-brand" href="/">
+                                        <img src="../grub_logo.png" width="60" height="60" alt="">
+                                      </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collpase navbar-collapse" id="navBarSupportedContent">
+                                        <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item active">
+                                                  <a class="nav-link" href="/">Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="/app">Grub Spots</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="/sessions/new">Log in</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link disabled" href="/users/new">Register</a>
+                                                </li>
+                                                
+                                              </ul>
+                                </div>
+                                
+                              </nav>
+                  <div class="jumbotron">
         <h1>Create User</h1>
         <form action="/users" method="POST">
             <div class="form-group">
@@ -47,7 +51,8 @@
                     <input type="password" class="form-control" name="password" placeholder="Password"  />
             </div>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-secondary btn-lg active">Submit</button>
         </form>
+                  </div>
     </body>
 </html>
