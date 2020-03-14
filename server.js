@@ -91,6 +91,6 @@ app.use("/app", restaurantsController)
 
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
-app.listen(process.env.PORT, () => {
-  console.log("listening on port", process.env.PORT);
+app.listen(port, () => {
+  console.log("listening on port", port);
 });
