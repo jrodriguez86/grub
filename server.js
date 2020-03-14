@@ -46,7 +46,7 @@ app.use(express.static('public'))
 
 
 app.use(session({
-    secret: "feedmeseymour", //some random string
+    secret: process.env.SECRET, //some random string
     resave: false,
     saveUninitialized: false
 }));
