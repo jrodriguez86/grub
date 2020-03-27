@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 // Set the web server port:
-const port = 3000;
+// const port = 3000;
 
 const bcrypt = require('bcrypt');
 
@@ -91,6 +91,6 @@ app.use("/app", restaurantsController)
 
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
-app.listen(port, () => {
-  console.log("listening on port", port);
+app.listen(PORT, () => {
+  console.log("listening on port", PORT);
 });
