@@ -1,15 +1,15 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 // Load express:
 const express = require("express");
 const app = express();
 
 // Set the web server port:
-// const port = 3000;
+const port = 3000;
 
 const bcrypt = require('bcrypt');
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 
 
@@ -27,7 +27,7 @@ const Restaurant = require('./models/restaurants.js');
 // patch requests from web pages:
 const methodOverride = require("method-override");
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost:27017/grub");
 
 mongoose.connection.once('open', () => {
     console.log('connected to mongo');
@@ -46,7 +46,7 @@ app.use(express.static('public'))
 
 
 app.use(session({
-    secret: process.env.SECRET, //some random string
+    secret: "mike", //some random string
     resave: false,
     saveUninitialized: false
 }));
@@ -91,6 +91,6 @@ app.use("/app", restaurantsController)
 
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
-app.listen(PORT, () => {
-  console.log("listening on port", PORT);
+app.listen(port, () => {
+  console.log("listening on port", port);
 });
