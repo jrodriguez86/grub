@@ -25,8 +25,8 @@
                             <li class="nav-item">
                               <a class="nav-link active" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="/app">Grub Spots</a>
+                            <li class="nav-item" id="grubspot">
+                              <a id="grub_spots" class="nav-link" href="/app">Grub Spots</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="/sessions/new">Log in</a>
@@ -53,8 +53,8 @@
                         <h1 class="display-4">   <% if(currentUser) { %>
                             Hey <%=currentUser.username%>!
                             <% } else { %>
-                                <a href="/sessions/new" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Log in</a>
-                                <a href="/users/new" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Register</a>
+                                <a href="/sessions/new" class="btn btn-secondary btn-lg active" id="Log-In" role="button" aria-pressed="true">Log in</a>
+                                <a href="/users/new" class="btn btn-secondary btn-lg active" id="Register" role="button" aria-pressed="true">Register</a>
 
                             <% } %>
                         </h1>
@@ -68,7 +68,7 @@
                     <p class="lead">What are you in the mood for?</p>
                     <hr class="my-4">
                     <p>Let's get started</p>
-                            <a href="/app/new" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Add a grub spot</a>
+                            <a href="/app/new" class="btn btn-secondary btn-lg active" id="add_a_grub_spot" role="button" aria-pressed="true">Add a grub spot</a>
 
                     
                 <% } %>

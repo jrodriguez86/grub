@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
             req.session.currentUser = foundUser;
             res.redirect('/');
         } else {
-            res.render('/new");
+            res.render('/new');
         }
     });
 });

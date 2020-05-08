@@ -39,7 +39,7 @@
         
       </nav>
       
-    <form action="/app" method="POST">
+    <form class="grub_form" action="/app" method="POST">
       
       <div class="form-group">
                 <label for="location">Grub spot</label>
@@ -53,7 +53,7 @@
                     <input type="text" class="form-control" id="city" name="city" placeholder="Boston, Miami, etc">
                   </div>
               
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-6" id="state_dropdown">
                       <label for="state" class="col-sm-2 control-label">State</label>
                       
                         <select class="form-control" id="state" name="state">
@@ -113,7 +113,7 @@
                         </select>
                       </div>
                       </div>
-                  <div class="form-group">
+                  <div class="form-group" id="price_dropdown">
                         <label for="exampleFormControlSelect1">Price</label>
                         <div class="col-md-6">
                         <select class="form-control" id="cost" name="cost">
@@ -125,7 +125,7 @@
                         </select>
                       </div>
                       
-                          <div class="form-group">
+                          <div class="form-group" id="attire_dropdown">
                               <label for="exampleFormControlSelect1">Attire</label>
                               <div class="col-md-6">
                               <select class="form-control" id="attire" name="attire">
@@ -141,7 +141,7 @@
                           <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
                         </div>
                   </div>
-                  <input class="btn btn-secondary btn-lg active" type="submit" value="Submit">
+                  <input id="submit_form" class="btn btn-secondary btn-lg active" type="submit" value="Submit"></button>
                   </div>
     </form>
     
